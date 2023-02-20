@@ -16,14 +16,19 @@ public class Book {
         this.genre = genre;
         this.lastRead = lastRead;
     }
+    public Book(String title, String author, int isbn, String genre, String lastRead){
+
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.genre = genre;
+        this.lastRead = lastRead;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
