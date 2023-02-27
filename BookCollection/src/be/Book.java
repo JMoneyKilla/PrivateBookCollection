@@ -3,25 +3,22 @@ package be;
 public class Book {
     private int id;
     private String title;
-    private String author;
-    private int isbn;
-    private String genre;
+    private int author;
+    private int genre;
     private String lastRead;
 
-    public Book(int id, String title, String author, int isbn, String genre, String lastRead){
+    public Book(int id, String title, int author, int genre, String lastRead){
         this.id = id;
         this.title = title;
         this.author = author;
-        this.isbn = isbn;
         this.genre = genre;
         this.lastRead = lastRead;
     }
-    public Book(String title, String author, int isbn, String genre, String lastRead){
+    public Book(String title, String author, String genre, String lastRead){
 
         this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.genre = genre;
+        this.author = Integer.parseInt(author);
+        this.genre = Integer.parseInt(genre);
         this.lastRead = lastRead;
     }
 
@@ -38,28 +35,20 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        this.author = Integer.parseInt(author);
     }
 
-    public int getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getGenre() {
+    public int getGenre() {
         return genre;
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        this.genre = Integer.parseInt(genre);
     }
 
     public String getLastRead() {
