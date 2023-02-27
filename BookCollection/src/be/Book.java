@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Book {
-    private IntegerProperty id= new SimpleIntegerProperty();
+    private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty title = new SimpleStringProperty();
     private IntegerProperty author = new SimpleIntegerProperty();
     private IntegerProperty genre = new SimpleIntegerProperty();

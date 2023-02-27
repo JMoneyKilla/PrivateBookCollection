@@ -1,10 +1,11 @@
 package dal;
 
+import be.Author;
 import be.Book;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DAO {
@@ -62,4 +63,10 @@ public class DAO {
         }
     }
 
+    public void getAuthorFromBooks(int book_id)
+    {
+        List<Author> getAuthorFromBooks = new ArrayList();
+
+
+    }
 }
