@@ -1,7 +1,9 @@
 package gui.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -12,6 +14,8 @@ public class BookAppController implements Initializable {
 
     @FXML
     private TableColumn tableColumnTitle, tableColumnAuthor, tableColumnGenre, tableColumnLastRead;
+    @FXML
+    private Label labelAlert;
 
 
     @Override
@@ -21,5 +25,14 @@ public class BookAppController implements Initializable {
         tableColumnGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         tableColumnLastRead.setCellValueFactory(new PropertyValueFactory<>("lastread"));
 
+    }
+
+    public void clickAddBook(ActionEvent actionEvent) {
+    }
+
+    public void clickDeleteBook(ActionEvent actionEvent) {
+    }
+
+    public void clickEditBook(ActionEvent actionEvent) {
     }
 }
