@@ -14,7 +14,7 @@ public class DataConnection{
     public Connection getConnection() {
         SQLServerDataSource ds;
         ds = new SQLServerDataSource();
-        ds.setDatabaseName("CSe2022B_e_15_BookCollection");
+        ds.setDatabaseName("CSe22B_e_15_BookCollection");
         ds.setUser("CSe2022B_e_15");
         ds.setPassword("CSe2022BE15#");
         ds.setServerName("10.176.111.34");

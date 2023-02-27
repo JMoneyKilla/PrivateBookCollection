@@ -1,9 +1,11 @@
 package dal;
 
-import be.Author;
 import be.Book;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,10 +65,35 @@ public class DAO {
         }
     }
 
-    public void getAuthorFromBooks(int book_id)
-    {
-        List<Author> getAuthorFromBooks = new ArrayList();
+    public List<Book> getAllBooks(){
+        Book book;
+        List<Book> allBooks = new ArrayList<>();
 
+        String sql = "SELECT * FROM Books";
+        try(Connection connection = dbc.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String title = rs.getString("title");
+                int author = rs.getInt("author");
+                int genre = rs.getInt("genre");
+                String lastRead = rs.getString("lastRead");
+                book = new Book(id, title, author, genre, lastRead);
+                allBooks.add(book);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return allBooks;
+    }
 
+    public static void main(String[] args) {
+        DAO dao = new DAO();
+        List<Book> books = dao.getAllBooks();
+        for (Book b: books
+             ) {
+            System.out.println(b.getTitle());
+        }
     }
 }
